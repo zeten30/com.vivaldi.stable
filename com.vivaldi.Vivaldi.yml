@@ -1,4 +1,4 @@
-app-id: com.vivalditechnologies.Vivaldi
+app-id: com.vivaldi.Vivaldi
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
@@ -107,9 +107,9 @@ modules:
       - install -Dm 755 stub_sandbox.sh /app/bin/stub_sandbox
       - install -Dm 644 -t /app/etc cobalt.ini
       - install -Dm 644 -t /app/share/flatpak-vivaldi flatpak_policy.json
-      - install -Dm 644 -t /app/share/applications com.vivalditechnologies.Vivaldi.desktop
-      - install -Dm 644 -t /app/share/metainfo com.vivalditechnologies.Vivaldi.metainfo.xml
-      - install -Dm 644 com.vivalditechnologies.Vivaldi-256.png /app/share/icons/hicolor/256x256/apps/com.vivalditechnologies.Vivaldi.png
+      - install -Dm 644 -t /app/share/applications com.vivaldi.Vivaldi.desktop
+      - install -Dm 644 -t /app/share/metainfo com.vivaldi.Vivaldi.metainfo.xml
+      - install -Dm 644 com.vivaldi.Vivaldi-256.png /app/share/icons/hicolor/256x256/apps/com.vivaldi.Vivaldi.png
       # workaround for broken 3d acceleration with ozone x11
       - install -Dm 644 -t /app/etc ld.so.conf
     sources:
@@ -141,10 +141,10 @@ modules:
       - type: file
         path: flatpak_policy.json
       - type: file
-        path: com.vivalditechnologies.Vivaldi.desktop
+        path: com.vivaldi.Vivaldi.desktop
       - type: file
-        path: com.vivalditechnologies.Vivaldi.metainfo.xml
+        path: com.vivaldi.Vivaldi.metainfo.xml
       - type: file
-        path: icons/com.vivalditechnologies.Vivaldi-256.png
+        path: icons/com.vivaldi.Vivaldi-256.png
       - type: file
         path: ld.so.conf

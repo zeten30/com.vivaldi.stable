@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2017 the Chromium authors, with modifications -->
 <component type="desktop">
-  <id>com.vivalditechnologies.Vivaldi</id>
-  <launchable type="desktop-id">com.vivalditechnologies.Vivaldi.desktop</launchable>
+  <id>com.vivaldi.Vivaldi</id>
+  <launchable type="desktop-id">com.vivaldi.Vivaldi.desktop</launchable>
   <name>Vivaldi</name>
   <developer_name>Vivaldi Technologies</developer_name>
   <summary>Introducing the new Microsoft Edge web browser. It’s time to expect more. More privacy. More control. More productivity. More value.</summary>
