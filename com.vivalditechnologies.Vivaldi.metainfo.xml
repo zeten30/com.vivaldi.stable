@@ -10,9 +10,8 @@
   <project_license>LicenseRef-proprietary</project_license>
   <url type="homepage">https://www.vivaldi.com</url>
   <description>
-    <h3>Take tabs to the next level, literally</h3>
     <p>Experience the web in a whole new way with Vivaldi.</p>
-    <p>ivaldi is a browser that has the features you need, a style that fits and values you can stand by. Your browser matters. Take control with Vivaldi.</p>
+    <p>Vivaldi is a browser that has the features you need, a style that fits and values you can stand by. Your browser matters. Take control with Vivaldi.</p>
     <p>Sort out your tabs by grouping them in two-level Tab Stacks. Stacks are a great way to keep things tidy when you have a lot of open tabs.</p>
     <p>NOTE: This wrapper is not verified by, affiliated with, or supported by Vivaldi Technologies.</p>
   </description>

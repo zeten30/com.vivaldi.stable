@@ -102,7 +102,7 @@ modules:
   - name: vivaldi
     buildsystem: simple
     build-commands:
-      - install -Dm 755 edge.sh /app/bin/vivaldi
+      - install -Dm 755 vivaldi /app/bin/vivaldi
       - install -Dm 755 apply_extra.sh /app/bin/apply_extra
       - install -Dm 755 stub_sandbox.sh /app/bin/stub_sandbox
       - install -Dm 644 -t /app/etc cobalt.ini
@@ -131,7 +131,7 @@ modules:
           - 'echo "Stub sandbox ignoring command: $@"'
           - exit 1
       - type: script
-        dest-filename: vivaldi.sh
+        dest-filename: vivaldi
         commands:
           - exec cobalt "$@"
       - type: file
