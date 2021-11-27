@@ -26,8 +26,9 @@ finish-args:
   - --talk-name=org.gnome.SessionManager
   - --system-talk-name=org.freedesktop.Avahi
   - --filesystem=xdg-run/pipewire-0
-  - --own-name=org.mpris.MediaPlayer2.edge.*
-  - --filesystem=xdg-download
+  - --own-name=org.mpris.MediaPlayer2.vivaldi.*
+  - --filesystem=home
+  - --persist=.local/lib
   - --persist=.pki
 modules:
   - libsecret.json
@@ -102,7 +103,7 @@ modules:
   - name: vivaldi
     buildsystem: simple
     build-commands:
-      - install -Dm 755 vivaldi /app/bin/vivaldi
+      - install -Dm 755 vivaldi.sh /app/bin/vivaldi
       - install -Dm 755 apply_extra.sh /app/bin/apply_extra
       - install -Dm 755 stub_sandbox.sh /app/bin/stub_sandbox
       - install -Dm 644 -t /app/etc cobalt.ini
@@ -113,10 +114,14 @@ modules:
       # workaround for broken 3d acceleration with ozone x11
       - install -Dm 644 -t /app/etc ld.so.conf
     sources:
+      - type: file
+        path: vivaldi.sh
+      - type: file
+        path: vivaldi-wrapper.patch
       - type: extra-data
         # From https://downloads.vivaldi.com/
-        url: https://downloads.vivaldi.com/stable/vivaldi-stable_4.2.2406.54-1_amd64.deb
-        sha256: 02c3a2a28b0e53bed563a94f3e504ec72dd206cd83cbaa141319b427dcf23c79
+        url: https://downloads.vivaldi.com/stable/vivaldi-stable_4.3.2439.71-1_amd64.deb
+        sha256: 0b6abca95821f12d4feadfaa30839348cddf2cdfc8b5d652fa884275050f0233
         filename: vivaldi-stable.deb
         x-checker-data:
           type: debian-repo
@@ -124,7 +129,7 @@ modules:
           root: https://repo.vivaldi.com/archive/deb
           dist: stable
           component: main
-        size: 85980896
+        size: 88023372
       - type: script
         dest-filename: stub_sandbox.sh
         commands:
