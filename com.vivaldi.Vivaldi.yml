@@ -94,8 +94,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/cobalt
-        tag: v2021.09.1
-        commit: 6081cef971331b350f6f83d18e208fd7397550e3
+        tag: v2021.11.1
+        commit: 8a49246a97fcb989b370c20b204324862d79541f
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
