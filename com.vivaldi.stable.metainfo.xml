@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2017 the Chromium authors, with modifications -->
 <component type="desktop">
-  <id>com.vivaldi.Vivaldi</id>
-  <launchable type="desktop-id">com.vivaldi.Vivaldi.desktop</launchable>
+  <id>com.vivaldi.stable</id>
+  <launchable type="desktop-id">com.vivaldi.stable.desktop</launchable>
   <name>Vivaldi</name>
   <developer_name>Vivaldi Technologies</developer_name>
-  <summary>Introducing the new Microsoft Edge web browser. It’s time to expect more. More privacy. More control. More productivity. More value.</summary>
+  <summary>Get unrivaled customization options and built-in browser features for better performance, productivity, and privacy.</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
   <url type="homepage">https://www.vivaldi.com</url>
@@ -21,7 +21,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="4.2.2406.54-1" date="2021-09-15"/>
+    <release version="5.6.2867.58-1" date="2023-01-11"/>
   </releases>
   <content_rating type="oars-1.1">
   </content_rating>
