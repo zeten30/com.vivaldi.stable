@@ -1,9 +1,9 @@
 app-id: com.vivaldi.stable
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: "22.08"
 sdk: org.freedesktop.Sdk
 base: org.chromium.Chromium.BaseApp
-base-version: '22.08'
+base-version: "22.08"
 command: vivaldi
 separate-locales: false
 build-options:
@@ -12,27 +12,41 @@ tags:
   - proprietary
 finish-args:
   - --device=all
-  - --env=GTK_PATH=/app/lib/gtkmodules
   - --env=CHROME_VERSION_EXTRA=beta
+  - --env=DCONF_USER_CONFIG_DIR=.config/dconf
+  - --env=GIO_EXTRA_MODULES=/app/lib/gio/modules
+  - --env=GSETTINGS_BACKEND=dconf
+  - --env=GTK_PATH=/app/lib/gtkmodules
+  - --filesystem=/run/.heim_org.h5l.kcm-socket
+  - --filesystem=host-etc
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+  - --filesystem=xdg-music
+  - --filesystem=xdg-pictures
+  - --filesystem=xdg-run/dconf
+  - --filesystem=xdg-run/pipewire-0
+  - --filesystem=xdg-videos
+  - --filesystem=~/.config/dconf:ro
+  - --filesystem=~/.config/kioslaverc
+  - --own-name=org.mpris.MediaPlayer2.vivaldi.*
+  - --persist=.pki
+  - --require-version=1.8.2
   - --share=ipc
   - --share=network
   - --socket=cups
+  - --socket=pcsc # FIDO2
   - --socket=pulseaudio
-  - --socket=x11
   - --socket=wayland
-  - --require-version=1.8.2
+  - --socket=x11
+  - --system-talk-name=org.freedesktop.Avahi
   - --system-talk-name=org.freedesktop.UPower
+  - --talk-name=ca.desrt.dconf
+  - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.FileManager1
   - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.freedesktop.ScreenSaver
   - --talk-name=org.freedesktop.secrets
   - --talk-name=org.gnome.SessionManager
-  - --talk-name=com.canonical.AppMenu.Registrar
-  - --system-talk-name=org.freedesktop.Avahi
-  - --filesystem=/run/.heim_org.h5l.kcm-socket
-  - --filesystem=xdg-run/pipewire-0
-  - --own-name=org.mpris.MediaPlayer2.vivaldi.*
-  - --filesystem=xdg-download
-  - --persist=.pki
 modules:
   - name: dconf
     buildsystem: meson
@@ -46,7 +60,7 @@ modules:
       - ca.desrt.dconf.service
       - dconf.service
       - dconf-service
-      - '*.pc'
+      - "*.pc"
     sources:
       - type: archive
         url: https://download.gnome.org/sources/dconf/0.40/dconf-0.40.0.tar.xz
@@ -85,8 +99,8 @@ modules:
     sources:
       - type: extra-data
         # From https://repo.vivaldi.com/archive/deb/pool/main/
-        url: https://repo.vivaldi.com/archive/deb/pool/main/vivaldi-stable_5.6.2867.58-1_amd64.deb
-        sha256: 7911d068aced7faea8f45a023524725d2e47b7a779d464e294d3b90f122d502c
+        url: https://repo.vivaldi.com/archive/deb/pool/main/vivaldi-stable_5.7.2921.53-1_amd64.deb
+        sha256: aa4282a072424638b75df5e4ef59f805f8c5c90a5767e05aae21e66d83c0baff
         filename: vivaldi-stable.deb
         x-checker-data:
           type: debian-repo
@@ -94,7 +108,7 @@ modules:
           root: https://repo.vivaldi.com/archive/deb
           dist: stable
           component: main
-        size: 101303448
+        size: 101595952
       - type: script
         dest-filename: stub_sandbox.sh
         commands:
